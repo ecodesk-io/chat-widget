@@ -22,8 +22,17 @@ jobs:
       - name: Verify Node.js Version
         run: node -v  # This ensures it's using the correct version
 
+      - name: Clean Install (Remove existing lock file & modules)
+        run: rm -rf node_modules package-lock.json
+
       - name: Install Dependencies
         run: npm install --legacy-peer-deps  # Prevent peer dependency issues
+
+      - name: Force Install Specific Dependencies
+        run: npm install theme-ui@0.3.1 @types/theme-ui@0.3.5 --legacy-peer-deps
+
+      - name: Verify Installed Versions
+        run: npm list theme-ui @types/theme-ui
 
       - name: Run Tests (Optional)
         run: npm test || echo "Tests failed, but continuing deployment"
