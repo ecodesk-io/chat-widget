@@ -13,10 +13,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Use Node.js
+      - name: Read Node.js Version from .nvmrc
+        id: nvm
+        run: echo "NODE_VERSION=$(cat .nvmrc)" >> $GITHUB_ENV
+
+      - name: Use Node.js (Version from .nvmrc)
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # Adjust this if needed
+          node-version: ${{ env.NODE_VERSION }}
           registry-url: "https://registry.npmjs.org/"
 
       - name: Install Dependencies
