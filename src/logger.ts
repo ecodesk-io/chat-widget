@@ -10,7 +10,7 @@ class Logger {
       return;
     }
 
-    console.debug('[Papercups]', ...args);
+    console.debug('[Ecodesk]', ...args);
   }
 
   log(...args: any) {
@@ -18,19 +18,19 @@ class Logger {
       return;
     }
 
-    console.log('[Papercups]', ...args);
+    console.log('[Ecodesk]', ...args);
   }
 
   info(...args: any) {
-    console.info('[Papercups]', ...args);
+    console.info('[Ecodesk]', ...args);
   }
 
   warn(...args: any) {
-    console.warn('[Papercups]', ...args);
+    console.warn('[Ecodesk]', ...args);
   }
 
   error(...args: any) {
-    console.error('[Papercups]', ...args);
+    console.error('[Ecodesk]', ...args);
   }
 }
 

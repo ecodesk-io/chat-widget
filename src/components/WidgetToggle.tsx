@@ -150,7 +150,7 @@ export const WidgetToggle = ({
 }) => {
   return (
     <Button
-      className='Papercups-toggleButton'
+      className='Ecodesk-toggleButton'
       variant='primary'
       p={0}
       style={style}

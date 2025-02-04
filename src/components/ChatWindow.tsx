@@ -20,7 +20,7 @@ const ChatWindow = (props: Props) => {
           return (
             <motion.iframe
               ref={setIframeRef}
-              className='Papercups-chatWindowContainer'
+              className='Ecodesk-chatWindowContainer'
               sandbox={sandbox}
               animate={isLoaded ? 'open' : 'closed'}
               initial='closed'

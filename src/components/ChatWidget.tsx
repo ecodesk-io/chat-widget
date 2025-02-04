@@ -120,8 +120,8 @@ const ChatWidget = (props: Props) => {
             <React.Fragment>
               <motion.iframe
                 ref={setIframeRef}
-                title='Papercups Chat Widget Container'
-                className='Papercups-chatWindowContainer'
+                title='Ecodesk Chat Widget Container'
+                className='Ecodesk-chatWindowContainer'
                 sandbox={sandbox}
                 animate={isActive ? 'open' : 'closed'}
                 initial='closed'
@@ -154,7 +154,7 @@ const ChatWidget = (props: Props) => {
 
               {isLoaded && !hideToggleButton && (
                 <motion.div
-                  className='Papercups-toggleButtonContainer'
+                  className='Ecodesk-toggleButtonContainer'
                   initial={false}
                   style={toggleContainerStyle}
                   animate={isOpen ? 'open' : 'closed'}

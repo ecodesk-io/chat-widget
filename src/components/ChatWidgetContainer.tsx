@@ -104,13 +104,13 @@ class ChatWidgetContainer extends React.Component<Props, State> {
     const token = props.token || props.accountId;
 
     if (!token) {
-      throw new Error('A `token` is required to run the Papercups chat!');
+      throw new Error('A `token` is required to run the Ecodesk chat!');
     } else if (!isValidUuid(token)) {
       console.error(
         `The \`token\` must be a valid UUID. (Received invalid \`token\`: ${token})`
       );
       console.error(
-        `If you're missing a Papercups \`token\`, you can get one by signing up for a free account at https://app.papercups.io/register`
+        `If you're missing a Ecodesk \`token\`, you can get one by signing up for a free account at https://app.papercups.io/register`
       );
       throw new Error(`Invalid \`token\`: ${token}`);
     }
@@ -155,7 +155,7 @@ class ChatWidgetContainer extends React.Component<Props, State> {
 
     this.storage = store(window);
     // TODO: use `subscription_plan` from settings.account to determine
-    // whether to display the Papercups branding or not in the chat window
+    // whether to display the Ecodesk branding or not in the chat window
     const settings = await this.fetchWidgetSettings();
     const metadata = {...getUserInfo(window), ...customer};
     const config: WidgetConfig = {

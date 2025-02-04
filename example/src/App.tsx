@@ -79,7 +79,7 @@ const App = ({disco, displayChatWindow}: Props) => {
             inbox={TEST_INBOX_ID}
             // deprecate `accountId`, use `token` instead
             accountId={TEST_ACCOUNT_ID}
-            title='Welcome to Papercups!'
+            title='Welcome to Ecodesk!'
             subtitle='Ask us anything in the chat window 😊'
             primaryColor={primaryColor}
             greeting='Hi there! How can I help you?'
@@ -122,7 +122,7 @@ const App = ({disco, displayChatWindow}: Props) => {
           inbox={TEST_INBOX_ID}
           // deprecate `accountId`, use `token` instead
           accountId={TEST_ACCOUNT_ID}
-          title='Welcome to Papercups!'
+          title='Welcome to Ecodesk!'
           subtitle='Ask us anything in the chat window 😊'
           primaryColor={primaryColor}
           greeting='Hi there! How can I help you?'
