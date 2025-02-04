@@ -13,11 +13,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Use Node.js 12
+      - name: Use Node.js 12.18.3
         uses: actions/setup-node@v3
         with:
-          node-version: 12
+          node-version: 12.18.3
           registry-url: "https://registry.npmjs.org/"
+
+      - name: Verify Node.js Version
+        run: node -v  # This ensures it's using the correct version
 
       - name: Install Dependencies
         run: npm install --legacy-peer-deps  # Prevent peer dependency issues
