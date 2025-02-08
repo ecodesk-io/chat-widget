@@ -1,6 +1,6 @@
 {
-  "short_name": "@papercups-io/chat-widget",
-  "name": "@papercups-io/chat-widget",
+  "short_name": "@ecodesk/chat-widget",
+  "name": "@ecodesk/chat-widget",
   "icons": [
     {
       "src": "favicon.ico",

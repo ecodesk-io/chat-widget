@@ -1,10 +1,10 @@
 {
   "name": "@ecodesk/chat-widget",
-  "version": "0.0.2",
+  "version": "0.1.2",
   "description": "Ecodesk chat widget",
-  "author": "reichert621",
+  "author": "ecodesk",
   "license": "MIT",
-  "repository": "papercups-io/chat-widget",
+  "repository": "ecodesk-io/chat-widget",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -63,7 +63,7 @@
     "dist"
   ],
   "dependencies": {
-    "@papercups-io/browser": "0.0.4-beta.0",
+    "@ecodesk/browser": "0.0.1",
     "framer-motion": "^2.0.1",
     "query-string": "^6.13.1",
     "theme-ui": "^0.3.1",

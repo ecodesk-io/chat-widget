@@ -13,14 +13,14 @@ import {
   getUserInfo,
   setupCustomEventHandlers,
   setupPostMessageHandlers,
-} from '@papercups-io/browser';
+} from '@ecodesk/browser';
 
 import {WidgetConfig, noop} from '../utils';
 import getThemeConfig from '../theme';
 import store from '../storage';
 import Logger from '../logger';
 
-const DEFAULT_IFRAME_URL = 'https://chat-widget.papercups.io';
+const DEFAULT_IFRAME_URL = 'https://chat-widget.ecodesk.io';
 
 export type SharedProps = {
   token: string;
@@ -90,11 +90,11 @@ class ChatWidgetContainer extends React.Component<Props, State> {
   logger: Logger = new Logger();
 
   EVENTS = [
-    'papercups:open',
-    'papercups:close',
-    'papercups:toggle',
-    'papercups:identify',
-    'papercups:customer:set',
+    'ecodesk:open',
+    'ecodesk:close',
+    'ecodesk:toggle',
+    'ecodesk:identify',
+    'ecodesk:customer:set',
     'storytime:customer:set',
   ];
 
@@ -110,7 +110,7 @@ class ChatWidgetContainer extends React.Component<Props, State> {
         `The \`token\` must be a valid UUID. (Received invalid \`token\`: ${token})`
       );
       console.error(
-        `If you're missing a Ecodesk \`token\`, you can get one by signing up for a free account at https://app.papercups.io/register`
+        `If you're missing a Ecodesk \`token\`, you can get one by signing up for a free account at https://chat-widget.ecodesk.io/register`
       );
       throw new Error(`Invalid \`token\`: ${token}`);
     }
@@ -443,13 +443,13 @@ class ChatWidgetContainer extends React.Component<Props, State> {
     const {type, detail} = event;
 
     switch (type) {
-      case 'papercups:open':
+      case 'ecodesk:open':
         return this.handleOpenWidget();
-      case 'papercups:close':
+      case 'ecodesk:close':
         return this.handleCloseWidget();
-      case 'papercups:toggle':
+      case 'ecodesk:toggle':
         return this.handleToggleOpen();
-      case 'papercups:customer:set':
+      case 'ecodesk:customer:set':
         return this.handleSetCustomerId(detail);
       case 'storytime:customer:set':
         return this.handleCustomerIdUpdated(detail); // TODO: test this!
@@ -493,8 +493,8 @@ class ChatWidgetContainer extends React.Component<Props, State> {
         return this.handleUnseenMessages(payload);
       case 'messages:seen':
         return this.handleMessagesSeen();
-      case 'papercups:open':
-      case 'papercups:close':
+      case 'ecodesk:open':
+      case 'ecodesk:close':
         return this.handleToggleOpen();
       default:
         return null;
@@ -603,7 +603,7 @@ class ChatWidgetContainer extends React.Component<Props, State> {
       }, t);
     }
 
-    this.send('papercups:plan', {plan: subscriptionPlan});
+    this.send('ecodesk:plan', {plan: subscriptionPlan});
   };
 
   formatCustomerMetadata = (customer: CustomerMetadata | null | undefined) => {
@@ -653,7 +653,7 @@ class ChatWidgetContainer extends React.Component<Props, State> {
     // Let other modules know that the customer has been set
     this.logger.debug('Caching customer ID:', customerId);
     window.dispatchEvent(
-      new CustomEvent('papercups:customer:set', {
+      new CustomEvent('ecodesk:customer:set', {
         detail: customerId,
       })
     );
@@ -665,7 +665,7 @@ class ChatWidgetContainer extends React.Component<Props, State> {
   };
 
   emitToggleEvent = (isOpen: boolean) => {
-    this.send('papercups:toggle', {isOpen});
+    this.send('ecodesk:toggle', {isOpen});
 
     const {
       persistOpenState = false,

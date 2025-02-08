@@ -1,13 +1,13 @@
 import React from 'react';
 
-import {ChatWidget, ChatWindow} from '@papercups-io/chat-widget';
-import {Papercups} from '@papercups-io/browser';
+import {ChatWidget, ChatWindow} from '@ecodesk/chat-widget';
+import {Ecodesk} from '@ecodesk/browser';
 
 // NB: during development, replace this with valid account/inbox IDs from your dev db
 const TEST_ACCOUNT_ID = '2ebbad4c-b162-4ed2-aff5-eaf9ebf469a5';
 const TEST_INBOX_ID = 'eab9c66e-ea8a-46f7-9565-3927ec55e20d';
 
-const cups = Papercups.init({
+const cups = Ecodesk.init({
   accountId: TEST_ACCOUNT_ID,
   inboxId: TEST_INBOX_ID,
   baseUrl: 'http://localhost:4000',
@@ -47,8 +47,8 @@ const App = ({disco, displayChatWindow}: Props) => {
   const handleIdentifyCustomer = () => {
     const params = {
       name: 'Demo User',
-      email: 'demo@papercups.io',
-      external_id: '789:demo@papercups.io',
+      email: 'demo@ecodesk.io',
+      external_id: '789:demo@ecodesk.io',
       // Ad hoc metadata
       metadata: {
         plan: 'team',
@@ -58,7 +58,7 @@ const App = ({disco, displayChatWindow}: Props) => {
       },
     };
 
-    cups.identify('789:demo@papercups.io', params);
+    cups.identify('789:demo@ecodesk.io', params);
     setCustomerDetails(params);
   };
 
@@ -185,9 +185,9 @@ const App = ({disco, displayChatWindow}: Props) => {
         />
       )}
 
-      <button onClick={Papercups.open}>Open</button>
-      <button onClick={Papercups.close}>Close</button>
-      <button onClick={Papercups.toggle}>Toggle</button>
+      <button onClick={Ecodesk.open}>Open</button>
+      <button onClick={Ecodesk.close}>Close</button>
+      <button onClick={Ecodesk.toggle}>Toggle</button>
       <button onClick={handleIdentifyCustomer}>
         {customer && customer.email ? 'Logged in' : 'Log in'}
       </button>

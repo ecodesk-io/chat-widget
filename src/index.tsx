@@ -1,9 +1,9 @@
 import ChatWidget from './components/ChatWidget';
 import ChatWindow from './components/ChatWindow';
 
-export const open = () => window.dispatchEvent(new Event('papercups:open'));
-export const close = () => window.dispatchEvent(new Event('papercups:close'));
-export const toggle = () => window.dispatchEvent(new Event('papercups:toggle'));
+export const open = () => window.dispatchEvent(new Event('ecodesk:open'));
+export const close = () => window.dispatchEvent(new Event('ecodesk:close'));
+export const toggle = () => window.dispatchEvent(new Event('ecodesk:toggle'));
 
 export const identify = () => {
   // TODO: add ability to create/update customer information
